@@ -1,0 +1,121 @@
+
+<%- include("partials/header") %>
+
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+<div class="pi_full_body">
+
+<div class="container">
+<div class="row">
+<div class="pi_body">
+	<div class="col-sm-6 col-md-6">
+		<img class="pitem_image"src="/<%= pitem_ide.image %>" alt="Flowers in Chania">
+	</div>
+	<div class="col-sm-6 pitem_text">
+		<h1 class='pitem_text_heading'><b><%= pitem_ide.pname %></b></h1>
+		<p><b>type:</b>  <%= pitem_ide.category %></p>
+		<p><b>price:</b>       <%= pitem_ide.pprice %></p>
+		<div><b>features:</b>
+			<ul>
+				<li>excellent warrenty</li>
+				<li>good life time</li>
+				<li>better service</li>
+				<li>low price</li>
+				
+			</ul>
+			<%if(currentuser){%>
+	<form action="/cart/<%= pitem_ide._id %>" method="POST">
+		<input type="hidden" name="userid" value="<%= currentuser._id %>">
+		<input type="hidden" name="username" value="<%= currentuser.username %>">
+		<input type="hidden" name="productname" value="<%= pitem_ide.pname %>">
+		<button class="btn btn-primary pitem_rbtn"type="submit">add to cart</button>
+	</form>
+<%}%>
+	
+			<a href="/products/<%= pitem_ide.category %>/<%= pitem_ide._id %>/comment/new" class="btn btn-danger pitem_rbtn">submit comment</a>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10 pitem_desp"><b>DESCRIPTION: </b><br>
+				
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+
+<button class="btn pitem_rbtn" onclick="myFunction()" id="myBtn">Read more</button>
+
+				
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		
+	</div>
+<%if(currentuser){%>
+	<%if(currentuser.username=="admin"){%>
+		<a href="<%= pitem_ide._id %>/edit" class="btn btn-lg btn-secondary">edit</a>
+			<form action="/products/<%= pitem_ide.category %>/<%= pitem_ide._id %>?_method=DELETE" method="POST">
+				<button type="submit" class="btn btn-danger">delete</button>
+			</form>
+	<%}%>
+<%}%>
+
+
+<div class="container">
+<div class="container">
+	
+
+		<% for(var i=pitem_ide.feedbacked.length-1;i>=0;i--){%>
+	<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-10 pitem_comments">
+		<p><%= pitem_ide.feedbacked[i].username %>	</p>
+		<p>rating:<%= pitem_ide.feedbacked[i].rating %></p>
+		<p><%= pitem_ide.feedbacked[i].comment %>		</p>
+		<div>
+			
+		
+		<%if(currentuser){%>
+		<%if(currentuser._id.equals(pitem_ide.feedbacked[i].id)){%>
+	<a href="/products/<%= pitem_ide.category %>/<%= pitem_ide._id %>/comment/<%= pitem_ide.feedbacked[i]._id %>/edit" class="btn btn-success pitem_cgbtn">
+		edit comment
+		</a>
+		
+		<form style="display:inline-block;margin-bottom:5px;" action="/products/<%= pitem_ide.category %>/<%= pitem_ide._id %>/deletecomment/<%= pitem_ide.feedbacked[i]._id %>?_method=DELETE" method="POST">
+			<button type="submit" class="btn btn-danger pitem_crbtn">
+				delete
+			</button>
+		</form>
+	<%}}%>
+		</div>
+		</div>
+	<div class="col-sm-1"></div>
+</div>
+	
+
+<%}%>	
+	
+</div>
+</div>
+	
+	
+</div>
+<%- include("partials/footer") %>

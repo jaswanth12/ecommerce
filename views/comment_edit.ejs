@@ -1,0 +1,13 @@
+<%- include("partials/header")%>
+<h1>
+	hey
+</h1>
+<form action="/products/<%=pitem.ptype%>/<%=pitem.pid%>/comment_edit/<%=hello._id%>?_method=PUT" method="POST">
+	<input type="number" name="review[rating]" value="<%=hello.rating%>">
+	<input type="text" name="review[comment]" value="<%=hello.comment%>">
+	<button type="submit">
+		submit feedback
+	</button>
+</form>
+
+<%- include("partials/footer")%>

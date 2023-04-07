@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+<link rel='stylesheet' href='/formsstyle.css'>
+	<link rel='stylesheet' href='/homestyle.css'>
+	<link rel='stylesheet' href='/productsstyle.css'>
+	<link rel='stylesheet' href='/productsstyle.css'>
+	<link rel='stylesheet' href='/productscategorystyle.css'>
+	<link rel='stylesheet' href='/productitemstyle.css'>
+	<link rel='stylesheet' href='/cartstyle.css'>
+	<link rel='stylesheet' href='/commentstyle.css'>
+	<link rel='stylesheet' href='/home_page.css'>
+	<link rel="stylesheet" href="/swiper.min.css">
+	<link rel="stylesheet" href="swiper.min.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="/javascriptfile"></script>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse" style="margin:0;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <!--<li class="active"><a href="/">Home</a></li>-->
+        <!--<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>-->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+		  <%if(currentuser){%>
+		  
+		  <li><a href="#"><%= currentuser.username %></a></li>
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> logout</a></li>
+		  
+		<%}else{%>
+		  <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> register</a></li>
+          <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		  <%}%>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+    
+    
+	<!--aos animations script-->
+	
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+  AOS.init();
+</script>
+	
+<!--swiper-->
+	

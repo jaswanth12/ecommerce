@@ -1,0 +1,35 @@
+<%- include("partials/header")%>
+
+
+
+<div class="cart_full_body">
+<div class="container">
+	
+	<%mybookeditems.forEach(function(item){%>
+<div class="row cart_body">
+<div class="col-sm-4 col-md-2 cartimage align-self-center">
+	<img src="cap.jpg"  alt="Girl in a jacket">
+</div>
+<div class="col-sm-4">
+	<p><b>product name:</b><%=item.busername%></p>
+	<p><b>quantity:</b> <%=item.buseradd%></p>
+	
+	<form style="display:inline;" action="#" method="POST">
+		<button class="btn btn-success cart_buy_btn" type="submit">return</button>
+	</form>
+	<form style="display:inline;" action="mybookeditems/<%= item._id %>" method="GET">
+		<button class="btn btn-success cart_buy_btn" type="submit">view item</button>
+	</form>
+	
+	
+	</div>
+	
+</div>
+<%});%>	
+	
+</div>
+	
+</div>
+
+
+<%- include("partials/footer")%>

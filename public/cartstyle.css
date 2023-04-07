@@ -1,0 +1,30 @@
+.cart_full_body{
+	font-size:30px;
+}
+.cartimage img{
+	width:100%;
+	height:150px;
+}
+.cartimage{
+	
+	margin:10px;
+	margin-bottom:10px;
+	
+}
+.cart_body{
+	background-color:;
+	margin:3px;
+	
+	border:1px solid black;
+}
+.cart_del_btn{
+background-color:red;
+	border:pink;
+	display:inline;
+}
+.cart_buy_btn{
+background-color:green;
+	border:pink;
+	display:inline;
+	
+}

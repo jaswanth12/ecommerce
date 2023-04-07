@@ -1,0 +1,56 @@
+.pc_body{
+	//background-color:#ffde22;
+}
+.sorting_btns{
+	margin:20px;
+	font-size:15px;
+}
+.pc_item_body{
+	background-color:#e1b382;
+	background-color:white;
+  border-radius: 2px;
+	border:1px solid grey;
+box-shadow: inset -2px -2px 8px rgba(0,0,0,1),
+			inset -2px -2px 12px rgba(0,0,0,0.5),
+			inset 2px 2px 4px rgba(0,0,0,0.1),
+			inset 2px 2px 8px rgba(0,0,0,0.15),
+			0 0 0.1VW rgba(255,255,255,0.7),
+  			  0 0 0.4VW rgba(255,255,255,0.7),
+              0 0 4VW rgba(0,0,0,0.7);
+}
+.pc_item_body:hover{
+	background-color:white;
+	//background-image: linear-gradient(to bottom right, white,#ff8928);
+	box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.43);
+}
+
+.pc_item_caption p{
+	margin:0px;
+	font-size:30px;
+	text-shadow:1px 1px grey;
+}
+.pc_item_image{
+border:1px solid white;	
+border-radius:4px;
+}
+.pc_item_button{
+	
+	top:50%;
+  background-color:#0f2862;
+  border: 1px solid black;
+  border-radius:50px;
+	color: white;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  //display: inline-block;
+	
+  font-size: 16px;
+	
+}
+.pc_item_button:hover{
+	text-decoration: none;
+	color:white;
+	padding:8px 25px;
+	box-shadow:5px 10px rgba(0,0,0,0.2);
+}

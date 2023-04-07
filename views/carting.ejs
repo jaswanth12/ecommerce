@@ -1,0 +1,33 @@
+<%- include("partials/header")%>
+
+<div class="cart_full_body">
+<div class="container">
+	
+	<%items.forEach(function(item){%>
+<div class="row cart_body">
+<div class="col-sm-4 col-md-2 cartimage align-self-center">
+	<img src="cap.jpg"  alt="Girl in a jacket">
+</div>
+<div class="col-sm-4">
+	<p><b>product name:</b><%=item.pname%></p>
+	<p><b>quantity:</b> <%=item.pquantity%></p>
+	<form style="display:inline;" action="/cart/<%=item._id%>?_method=DELETE" method="POST">
+	<button class="btn btn-danger cart_del_btn" type="submit">delete</button>
+	</form>
+	<form style="display:inline;" action="/cart/<%=item._id%>/buy?_method=DELETE" method="POST">
+	<button class="btn btn-success cart_buy_btn" type="submit">Buy</button>
+	</form>
+	<form style="display:inline;" action="/buyitem/<%=item.pid%>" method="GET">
+	<button class="btn btn-success cart_buy_btn" type="submit">Buy new item</button>
+	</form>
+	
+	
+	</div>
+	
+</div>
+<%});%>	
+	
+</div>
+	
+</div>
+<%- include("partials/footer")%>

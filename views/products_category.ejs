@@ -1,0 +1,73 @@
+<%- include("partials/header") %>
+
+
+<div class="pc_body">
+	<!--<div class="container">
+		<div class="row">
+
+	<div class="sorting_btns">
+	<form action="/products/" method="GET">
+	<input  type="radio" name="sorting" value="byname">BYNAME	
+	<input type="radio" name="sorting" value="byprice">BYPRICE
+	<input type="radio" name="sorting" value="byprice" disabled>RATING
+	<button class="btn btn-primary" type="submit">submit</button>	
+		
+</form>
+	</div>
+	
+	</div>
+	-->	
+	</div>
+<!--code for displaying the products-->
+<div class="container">
+	<!--<h1>THIS PAGE CONTAINS LIST OFF ALL PRODUCTS OF <%= cname %></h1>-->
+	<div class="row">
+		<%if(hello.length==0){%>		
+			<h1>no items to display</h1>	
+		<%}%>		
+	<% for(var i=0;i<hello.length;i++){%>
+		<% if(cname==hello[i].category){ %>
+		<div class="col-md-3 col-sm-6">
+        <%if(i%2==0){%>
+			<div data-aos="zoom-in"
+     			data-aos-anchor-placement="center-center">   
+				<div class="thumbnail pc_item_body">
+                   <img class="pc_item_image" src="/<%= hello[i].image %>">
+                   <div class="caption pc_item_caption" style="text-align:center;">
+                  			<p><%= hello[i].pname %></p>
+							<p><%= hello[i].pprice %></p>
+						<p><a class="pc_item_button" href="<%= hello[i].category %>/<%= hello[i]._id %>">view</a></p>
+                   </div>
+                </div>
+			</div>
+        
+		<%}else{%>
+			<div data-aos="zoom-out"
+     			data-aos-anchor-placement="center-center">   
+				<div class="thumbnail pc_item_body">
+                   <img class="pc_item_image" src="/<%= hello[i].image %>">
+                   <div class="caption pc_item_caption" style="text-align:center;">
+                  			<p><%= hello[i].pname %></p>
+							<p><%= hello[i].pprice %></p>
+						<p><a class="pc_item_button" href="<%= hello[i].category %>/<%= hello[i]._id %>">view</a></p>
+                   </div>
+                </div>
+			</div>
+			<%}%>
+		
+		</div>
+		
+		
+		
+		
+	<%}%>
+<%}%>
+	</div>
+</div>
+	
+	
+
+
+	
+</div>
+	<%- include("partials/footer") %>

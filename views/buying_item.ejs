@@ -1,0 +1,41 @@
+<%- include("partials/header")%>
+<div class="forms_body">
+	
+
+<h1>
+	<%= error %>
+	
+</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="form_styles">
+			
+			<h1 class="form_heading">
+				REGISTER
+			</h1>
+	<form action="/boughtitem" method="POST">
+	<div class="form-group">
+		<input class="form-control" type="hidden" name="productid" placeholder="productid" 
+			   value="<%=productitem %>" >
+	</div>
+			
+	<div class="form-group">
+		<input class="form-control" type="string" name="busername" placeholder="username">
+	</div>
+	<div class="form-group">
+		<input class="form-control" type="number" name="buserphno" placeholder="phone num">
+	</div>
+	<div class="form-group">
+		<input class="form-control" type="string" name="buseradd" placeholder="user address">
+	</div>
+	<button class="btn btn-success cart_buy_btn" type="submit">Buy new product</button>
+			</form>
+			
+	
+		</div>
+	</div>
+</div>
+</div>
+
+<%- include("partials/footer")%>

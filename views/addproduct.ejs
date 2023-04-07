@@ -1,0 +1,35 @@
+
+
+<%- include("partials/header") %>
+
+<h1>PLEASE ENTER THE PRODUCT ID BELOW TO ADD PRODUCT </h1>
+<% for(var i=0;i<hello.length;i++){%>
+
+<div>
+<h2>
+	<%= hello[i].category %>-
+	<%= hello[i].pname %>-
+	<%= hello[i].pprice %>
+	"<%= hello[i].image %>
+</h2>
+</div>
+
+
+
+<%}%>
+
+
+<form action="/addproduct" method="POST">
+	<!--<input type="text" name="productid" placeholder="pide">-->
+	<input type="text" name="productcat" placeholder="pcategory">
+	<input type="text" name="productname" placeholder="pname">
+	<input type="text" name="productprice" placeholder="pprice">
+	<input type="text" name="productimg" placeholder="pimage">
+	<button type="submit">
+		submit
+	</button>
+</form>
+
+<h2><a href="/products">click here</a> to go to products page</h2>
+
+<%- include("partials/footer") %>

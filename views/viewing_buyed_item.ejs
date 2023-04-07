@@ -1,0 +1,32 @@
+<%- include("partials/header")%>
+
+<div class="container">
+<div class="row">
+	<div class="pi_body">
+	
+		<div class="col-sm-12 col-md-12">
+		<img class="pitem_image" src="/<%= boughtproduct.image%>" alt="Flowers in Chania">
+	</div>
+		
+	</div>
+		<div class="row">
+	<div class="pi_body">
+		<div class="col-sm-3 col-md-3"></div>
+	<div class="col-sm-6 col-md-6">
+		<center>
+		<h1><b>Name</b>  <%= bougthitem.busername%></h1>
+		<h1><b>Phone No</b>  <%= bougthitem.bphoneno%></h1>
+		<h1><b>address</b>  <%= bougthitem.buseradd%></h1>
+		<h1><b>product name</b>  <%= boughtproduct.pname%></h1>
+		<h1><b>product type</b>  <%= boughtproduct.pcategory%></h1>
+		<h1><b>product price</b>  <%= boughtproduct.pprice%></h1>
+		</center>
+	</div>
+		<div class="col-sm-3 col-md-3"></div>
+			</div>
+		</div>
+	
+	</div>
+</div>
+
+<%- include("partials/footer")%>
